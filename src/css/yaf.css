@@ -172,3 +172,22 @@
   .yaf-fire__inner, .yaf-join { grid-template-columns: 1fr; gap: 2rem; }
   .yaf-fire__flame { order: -1; width: 11rem; }
 }
+/* Phone: the Life in YAF cards scroll sideways instead of stacking */
+@media (max-width: 700px) {
+  .yaf-grid {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 1rem;
+    margin: 0 -1rem;              /* let the cards reach the screen edges */
+    padding: 0.25rem 1rem 1.25rem;
+    scrollbar-width: none;        /* hide the scrollbar */
+  }
+  .yaf-grid::-webkit-scrollbar { display: none; }
+
+  .yaf-card {
+    flex: 0 0 78%;                /* each card takes 78% of the width */
+    scroll-snap-align: start;
+  }
+}
