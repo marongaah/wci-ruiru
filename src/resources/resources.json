@@ -1,0 +1,5 @@
+{
+  "layout": "post.njk",
+  "tags": "resources",
+  "permalink": "/resources/{{ page.fileSlug }}/index.html"
+}

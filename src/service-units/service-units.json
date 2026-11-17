@@ -1,0 +1,5 @@
+{
+  "layout": "unit.njk",
+  "tags": "serviceUnits",
+  "permalink": "/service-units/{{ page.fileSlug }}/index.html"
+}

@@ -1,0 +1,43 @@
+---
+layout: base.njk
+css: service-units.css
+---
+<section class="unit-hero">
+  <div class="container unit-hero__inner">
+    <div>
+      <p class="pill"><span class="pill__dot"></span>{{ category or "Service unit" }}</p>
+      <h1 class="unit-hero__title">{{ title }}</h1>
+    </div>
+    <p class="unit-hero__summary">{{ summary }}</p>
+  </div>
+</section>
+
+<section class="container unit-detail">
+  <div class="unit-detail__main">
+    <p class="back"><a href="{{ '/service-units/' | url }}">&larr; All service units</a></p>
+    <p class="unit-eyebrow">About this unit</p>
+    <h2 class="unit-detail__heading">Overview</h2>
+    <div class="unit-body">
+      {{ content | safe }}
+    </div>
+  </div>
+
+  <aside class="facts">
+    <h2 class="facts__title">Quick facts</h2>
+    <ul class="facts__list">
+      <li><span class="facts__label">Group:</span> {{ category or "Service unit" }}</li>
+      <li><span class="facts__label">Meets:</span> {{ meets or "To be announced" }}</li>
+      <li><span class="facts__label">Leader:</span> {{ leader or "To be announced" }}</li>
+    </ul>
+
+    {% if whatsapp %}
+      {% set msg = "Hello, I would like to know more about joining the " + title + "." %}
+      <a class="btn btn--whatsapp" href="https://wa.me/{{ whatsapp }}?text={{ msg | urlencode }}" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.4A8.4 8.4 0 1 1 21 11.5Z"/></svg>
+        Chat with the leader on WhatsApp
+      </a>
+    {% else %}
+      <p class="facts__note">The leader's WhatsApp number will be added soon. In the meantime, <a href="{{ '/contact/' | url }}">contact the church office</a>.</p>
+    {% endif %}
+  </aside>
+</section>

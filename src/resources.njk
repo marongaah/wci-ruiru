@@ -1,0 +1,27 @@
+---
+layout: base.njk
+title: Resources
+css: resources.css
+---
+<section class="container">
+  <h1>Resources</h1>
+  <p>Weekly prayers and teachings.</p>
+
+  <div class="filters">
+    <button class="filter is-active" data-filter="all">All</button>
+    <button class="filter" data-filter="teaching">Teachings</button>
+    <button class="filter" data-filter="prayer">Prayers</button>
+  </div>
+
+  <div class="resource-list">
+    {% for post in collections.resourcesNewestFirst %}
+      <article class="resource-card" data-type="{{ post.data.type }}">
+        <p class="resource-card__meta">{{ post.data.type | capitalize }} &middot; {{ post.date | readableDate }}</p>
+        <h2><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
+        {% if post.data.summary %}<p>{{ post.data.summary }}</p>{% endif %}
+      </article>
+    {% else %}
+      <p>No resources yet. Check back soon.</p>
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,17 @@
+<header class="navbar">
+  <a class="navbar__brand" href="{{ '/' | url }}">{{ site.shortName }}</a>
+
+  <nav class="navbar__links" aria-label="Main">
+    <ul>
+      {% for item in site.nav %}
+        <li>
+          <a href="{{ item.url | url }}"{% if (item.url == "/" and page.url == "/") or (item.url != "/" and page.url.startsWith(item.url)) %} aria-current="page"{% endif %}>{{ item.label }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <a class="btn btn--gold navbar__cta" href="{{ '/#service-times' | url }}">Plan your visit</a>
+
+  <button class="navbar__toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+</header>

@@ -1,0 +1,174 @@
+/* ===== YAF page: bold, young and lively ===== */
+
+/* ---- Shared bits ---- */
+.yaf-gold { color: var(--color-accent); }
+.yaf-pill {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--color-accent);
+  border-radius: 999px;
+  padding: 0.3rem 1rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  margin-bottom: 1.25rem;
+}
+.yaf-heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+}
+
+/* Scripture quotes */
+.yaf-verse {
+  margin-top: 1.5rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--color-accent);
+  max-width: 38rem;
+}
+.yaf-verse p { font-family: var(--font-display); font-style: italic; font-size: 1.05rem; line-height: 1.55; }
+.yaf-verse cite { display: block; margin-top: 0.4rem; font-style: normal; font-size: 0.9rem; font-weight: 600; color: var(--color-primary); }
+.yaf-verse--light cite { color: var(--color-accent); }
+.yaf-verse--center { margin-left: auto; margin-right: auto; border-left: 0; padding-left: 0; text-align: center; }
+.yaf-verse--center::before { content: ""; display: block; width: 3rem; height: 3px; background: var(--color-accent); margin: 0 auto 1rem; }
+
+/* ---- Hero ---- */
+.yaf-hero {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background:
+    radial-gradient(circle at 85% 15%, rgba(212, 175, 55, 0.35), transparent 45%),
+    linear-gradient(135deg, #2a0508 0%, var(--color-deep) 45%, var(--color-primary) 100%);
+}
+/* giant outlined "YAF" behind the text */
+.yaf-hero::before {
+  content: "YAF";
+  position: absolute;
+  right: -1rem;
+  bottom: -2.5rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(10rem, 30vw, 24rem);
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.14);
+  pointer-events: none;
+}
+.yaf-hero__inner { position: relative; padding-top: 5rem; padding-bottom: 5.5rem; }
+.yaf-hero__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.6rem, 8vw, 5.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  max-width: 12ch;
+}
+.yaf-hero__lead { margin-top: 1.25rem; font-size: clamp(1.05rem, 2vw, 1.3rem); max-width: 32rem; color: rgba(255, 255, 255, 0.92); }
+.yaf-hero__actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1.75rem; margin-top: 2rem; }
+.yaf-hero__link { color: #fff; font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(255, 255, 255, 0.7); padding-bottom: 4px; }
+.yaf-hero__link:hover { color: var(--color-accent); border-color: var(--color-accent); }
+
+/* ---- Moving ticker ---- */
+.yaf-ticker { background: var(--color-accent); color: #2a0a0a; overflow: hidden; white-space: nowrap; }
+.yaf-ticker__track { display: inline-flex; animation: yaf-scroll 28s linear infinite; }
+.yaf-ticker__group {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.9rem 0.75rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+@keyframes yaf-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .yaf-ticker__track { animation: none; } }
+
+/* ---- Events ---- */
+.yaf-section { background: var(--color-muted); padding: 4.5rem 0; }
+.yaf-head { text-align: center; max-width: 42rem; margin: 0 auto 2.5rem; }
+.yaf-head > p { color: #555; font-size: 1.1rem; }
+.yaf-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 1.5rem; }
+.yaf-card {
+  background: #fff;
+  border: 1px solid #e6e1d8;
+  border-radius: 22px;
+  padding: 2rem 1.5rem;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.yaf-card:hover { transform: translateY(-6px) rotate(-1deg); border-color: #1a1a1a; box-shadow: 0 14px 32px rgba(0, 0, 0, 0.1); }
+.yaf-card__icon {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #fbe9a6, var(--color-accent));
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+}
+.yaf-card__title { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.5rem; }
+.yaf-card p { color: #444; }
+
+/* ---- Fire Night ---- */
+.yaf-fire {
+  color: #fff;
+  background:
+    radial-gradient(circle at 15% 110%, rgba(255, 106, 0, 0.5), transparent 55%),
+    linear-gradient(160deg, #1a0305 0%, var(--color-deep) 100%);
+}
+.yaf-fire__inner { display: grid; grid-template-columns: 1.3fr 1fr; gap: 3rem; align-items: center; padding-top: 4.5rem; padding-bottom: 4.5rem; }
+.yaf-fire__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(3rem, 9vw, 6rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  background: linear-gradient(90deg, #ffd24d, #ff7a18);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.yaf-fire__text { margin-top: 1rem; font-size: 1.15rem; max-width: 34rem; color: rgba(255, 255, 255, 0.92); }
+.yaf-fire__facts { list-style: none; margin-top: 1.75rem; display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.yaf-fire__facts li { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 999px; padding: 0.5rem 1.1rem; }
+.yaf-fire__facts strong { color: var(--color-accent); }
+.yaf-fire__flame {
+  justify-self: center;
+  width: min(18rem, 70vw);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: clamp(6rem, 18vw, 9rem);
+  background: radial-gradient(circle, rgba(255, 140, 0, 0.45) 0%, rgba(255, 140, 0, 0.12) 55%, transparent 70%);
+}
+
+/* ---- Join ---- */
+.yaf-join { display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; align-items: start; padding-top: 4rem; padding-bottom: 4.5rem; }
+.yaf-join > div > p { font-size: 1.1rem; line-height: 1.8; color: #333; max-width: 40rem; }
+.yaf-facts {
+  background: linear-gradient(160deg, var(--color-primary) 0%, var(--color-deep) 100%);
+  color: #fff;
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+}
+.yaf-facts__title { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; margin-bottom: 1rem; }
+.yaf-facts__list { list-style: none; border-top: 1px solid rgba(255, 255, 255, 0.2); }
+.yaf-facts__list li { display: flex; align-items: baseline; gap: 0.6rem; padding: 0.9rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
+.yaf-facts__list li::before { content: ""; flex: none; width: 0.45rem; height: 0.45rem; border-radius: 50%; background: var(--color-accent); }
+.yaf-facts__label { color: var(--color-accent); font-weight: 700; }
+.yaf-facts .btn { display: block; text-align: center; margin-top: 1.5rem; }
+.yaf-facts__note { margin-top: 1.25rem; color: rgba(255, 255, 255, 0.85); font-size: 0.95rem; }
+.yaf-facts__note a { color: var(--color-accent); }
+.btn--whatsapp { background: #128c4a; color: #fff; }
+.btn--whatsapp:hover { background: #0e7a3f; }
+
+@media (max-width: 900px) {
+  .yaf-fire__inner, .yaf-join { grid-template-columns: 1fr; gap: 2rem; }
+  .yaf-fire__flame { order: -1; width: 11rem; }
+}

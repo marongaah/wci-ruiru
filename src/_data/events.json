@@ -1,0 +1,22 @@
+
+[
+  {
+    "date": "20 December 2026",
+    "title": "Christmas Celebration",
+    "details": "Join us for a special time of worship, fellowship and celebration.",
+    "image": "/Assets/images/events/christmas.jpg"
+  },
+  {
+    "date": "27 December 2026",
+    "title": "Thanksgiving Service",
+    "details": "Come and give thanks to God for His goodness throughout the year.",
+    "image": "/Assets/images/events/thanksgiving.jpg"
+  },
+  {
+    "date": "3 January 2027",
+    "title": "New Year Service",
+    "details": "Start the year in God's presence with praise and worship.",
+    "image": "/Assets/images/events/new-year.jpg"
+  }
+]
+

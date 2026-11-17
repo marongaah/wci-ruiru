@@ -1,0 +1,167 @@
+/* ===== WOFBI page ===== */
+
+/* ---- Header band ---- */
+.wofbi-band { background: var(--color-muted); border-bottom: 1px solid #e6e1d8; }
+.wofbi-band__inner {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fff;
+  border: 1px solid #e6dfcc;
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8a6d0b;
+  margin-bottom: 1rem;
+}
+.pill__dot { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--color-accent); }
+.wofbi-band__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  line-height: 1.05;
+  color: var(--color-deep);
+}
+.wofbi-band__summary {
+  border-left: 3px solid var(--color-accent);
+  padding-left: 1.25rem;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+/* ---- Shared text styles ---- */
+.wofbi-eyebrow {
+  color: #8a6d0b;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.wofbi-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+/* ---- About + quick facts ---- */
+.wofbi-about {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+}
+.wofbi-about p { font-size: 1.05rem; line-height: 1.8; color: #333; max-width: 44rem; }
+.wofbi-about p + p { margin-top: 1rem; }
+
+.wofbi-verse {
+  margin-top: 1.75rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--color-accent);
+  max-width: 40rem;
+}
+.wofbi-about .wofbi-verse p {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+.wofbi-verse cite {
+  display: block;
+  margin-top: 0.4rem;
+  font-style: normal;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.facts {
+  position: sticky;
+  top: 6rem;
+  background: linear-gradient(160deg, var(--color-primary) 0%, var(--color-deep) 100%);
+  color: #fff;
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+}
+.facts__title { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; margin-bottom: 1rem; }
+.facts__list { list-style: none; border-top: 1px solid rgba(255, 255, 255, 0.2); }
+.facts__list li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.facts__list li::before {
+  content: "";
+  flex: none;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+.facts__label { color: var(--color-accent); font-weight: 700; }
+
+/* ---- Course cards ---- */
+.wofbi-courses { background: var(--color-muted); padding: 4rem 0; }
+.wofbi-courses__head { text-align: center; max-width: 40rem; margin: 0 auto 2.5rem; }
+.wofbi-courses__head p:last-child { color: #555; }
+
+.course-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+.course {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #e6e1d8;
+  border-radius: 20px;
+  padding: 2rem 1.75rem 1.75rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.course:hover { border-color: #1a1a1a; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
+.course__icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: #f4efe1;
+  border: 1px solid #e6dfcc;
+  display: grid;
+  place-items: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.25rem;
+}
+.course__level { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin-bottom: 0.4rem; }
+.course__title { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; line-height: 1.3; color: #111; }
+.course__count { margin-top: 0.5rem; font-weight: 700; color: var(--color-primary); }
+.course__text { margin-top: 0.75rem; color: #444; }
+.course__action { margin-top: auto; padding-top: 1.5rem; }
+
+/* ---- Call to action ---- */
+.wofbi-cta {
+  background: linear-gradient(135deg, var(--color-deep) 0%, var(--color-primary) 100%);
+  color: #fff;
+  text-align: center;
+}
+.wofbi-cta .container { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+.wofbi-cta__title { font-family: var(--font-display); font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 700; margin-bottom: 0.5rem; }
+.wofbi-cta p { margin-bottom: 1.5rem; }
+
+@media (max-width: 900px) {
+  .wofbi-band__inner, .wofbi-about { grid-template-columns: 1fr; gap: 1.5rem; }
+  .facts { position: static; }
+}

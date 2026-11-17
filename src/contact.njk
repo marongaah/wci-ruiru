@@ -1,0 +1,121 @@
+---
+layout: base.njk
+title: Contact
+css: contact.css
+description: Contact Winners Chapel International Ruiru. Find our service times and location, or send us a message.
+---
+{% set mapLink = "https://www.google.com/maps/place/Winners+Chapel+International+Ruiru/@-1.1213184,36.96442,17z/data=!3m1!4b1!4m6!3m5!1s0x182f470007eeda9f:0x3b1dfa29d0804f82!8m2!3d-1.1213238!4d36.9669949!16s%2Fg%2F11y3d0dzhb" %}
+
+{# ===== Header band ===== #}
+<section class="page-band">
+  <div class="container page-band__inner">
+    <div>
+      <p class="pill"><span class="pill__dot"></span>Contact us</p>
+      <h1 class="page-band__title">Get in touch</h1>
+    </div>
+    <p class="page-band__summary">Planning a first visit, or have a question about a unit or a course? Send us a message and we will reply.</p>
+  </div>
+</section>
+
+{# ===== Info card + form ===== #}
+<section class="container contact-layout">
+  <aside class="contact-card">
+    <h2 class="contact-card__title">Come and worship with us.</h2>
+    <p class="contact-card__lead">Everyone is welcome. Here is where to find us and how to reach us.</p>
+
+    <ul class="contact-points">
+      <li>
+        <span class="contact-points__icon" aria-hidden="true">📍</span>
+        <div>
+          <h3>Find us in Ruiru</h3>
+          <p>{{ site.name }}, {{ site.address }}.</p>
+        </div>
+      </li>
+      <li>
+        <span class="contact-points__icon" aria-hidden="true">⏰</span>
+        <div>
+          <h3>Service times</h3>
+          {% for s in site.services %}
+            <p>{{ s.day }}, {{ s.time }}</p>
+          {% endfor %}
+        </div>
+      </li>
+      <li>
+        <span class="contact-points__icon" aria-hidden="true">💬</span>
+        <div>
+          <h3>Ask us anything</h3>
+          <p>About a service unit, WOFBI, transport or your first visit.</p>
+        </div>
+      </li>
+    </ul>
+
+    <div class="contact-card__talk">
+      <p>Prefer to talk first?</p>
+      {% if site.whatsapp %}
+        <a class="contact-card__link" href="https://wa.me/{{ site.whatsapp }}" target="_blank" rel="noopener">Chat with us on WhatsApp</a>
+      {% endif %}
+      <a href="tel:{{ site.phone | replace(' ', '') }}">{{ site.phone }}</a>
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+    </div>
+  </aside>
+
+  <div class="form-card">
+    <h2 class="form-card__title">Send us a message</h2>
+    <form id="contact-form" data-whatsapp="{{ site.whatsapp }}" data-email="{{ site.email }}">
+      <div class="form-grid">
+        <div class="field">
+          <label for="name">Full name <span class="req">*</span></label>
+          <input id="name" name="name" type="text" placeholder="Your name" required autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="phone">Phone number <span class="req">*</span></label>
+          <input id="phone" name="phone" type="tel" placeholder="+254 700 000 000" required autocomplete="tel">
+        </div>
+        <div class="field">
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="topic">What is this about?</label>
+          <select id="topic" name="topic">
+            <option>Visiting the church</option>
+            <option>Service units</option>
+            <option>WOFBI courses</option>
+            <option>Prayer request</option>
+            <option>Transport</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field field--full">
+          <label for="message">Your message <span class="req">*</span></label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell us how we can help." required></textarea>
+        </div>
+      </div>
+      <button class="btn btn--primary form-card__submit" type="submit">Send message</button>
+      <p class="form-note">
+        {% if site.whatsapp %}When you press Send, WhatsApp opens with your message ready to send.{% else %}When you press Send, your email app opens with your message ready to send.{% endif %}
+      </p>
+    </form>
+  </div>
+</section>
+
+{# ===== Location ===== #}
+<section class="location" id="location">
+  <div class="container">
+    <div class="location__head">
+      <p class="location__eyebrow">Our location</p>
+      <h2 class="location__heading">Find the church</h2>
+      <p>{{ site.name }}, {{ site.address }}.</p>
+    </div>
+    <iframe
+      class="location__map"
+      title="Map showing {{ site.name }}"
+      src="https://maps.google.com/maps?q=-1.1213238,36.9669949&z=16&output=embed"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="location__actions">
+      <a class="btn btn--primary" href="https://www.google.com/maps/dir/?api=1&destination=-1.1213238,36.9669949" target="_blank" rel="noopener">Get directions</a>
+      <a class="location__link" href="{{ mapLink }}" target="_blank" rel="noopener">Open in Google Maps</a>
+    </div>
+  </div>
+</section>

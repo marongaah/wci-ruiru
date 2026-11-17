@@ -1,0 +1,78 @@
+---
+layout: base.njk
+title: WOFBI
+css: wofbi.css
+description: Word of Faith Bible Institute (WOFBI) at Winners Chapel International Ruiru. Certificate and diploma courses for believers from every walk of life.
+---
+
+{# ===== Header band ===== #}
+<section class="wofbi-band">
+  <div class="container wofbi-band__inner">
+    <div>
+      <p class="pill"><span class="pill__dot"></span>Word of Faith Bible Institute</p>
+      <h1 class="wofbi-band__title">WOFBI</h1>
+    </div>
+    <p class="wofbi-band__summary">The leadership and training arm of Living Faith Church Worldwide, open to people from every walk of life.</p>
+  </div>
+</section>
+
+{# ===== About + quick facts ===== #}
+<section class="container wofbi-about">
+  <div>
+    <p class="wofbi-eyebrow">About WOFBI</p>
+    <h2 class="wofbi-heading">A school for kingdom builders</h2>
+    {# Replace or extend this text with what WOFBI at Ruiru wants to say #}
+    <p>The Word of Faith Bible Institute was established on 1 September 1986 in Kaduna, Nigeria, to train men and women for exploits in the Kingdom of God.</p>
+    <p>Its students come from all walks of life, including ministers, professionals, business people and workers. Whatever your background, there is a place for you in class.</p>
+    <blockquote class="wofbi-verse">
+      <p>Study to shew thyself approved unto God, a workman that needeth not to be ashamed, rightly dividing the word of truth.</p>
+      <cite>2 Timothy 2:15</cite>
+    </blockquote>
+  </div>
+
+  <aside class="facts">
+    <h2 class="facts__title">Quick facts</h2>
+    <ul class="facts__list">
+      <li><span class="facts__label">Founded:</span> 1986, Kaduna, Nigeria</li>
+      <li><span class="facts__label">Part of:</span> Living Faith Church Worldwide</li>
+      <li><span class="facts__label">Open to:</span> All walks of life</li>
+      <li><span class="facts__label">Programs:</span> 3, with 12 courses each</li>
+      <li><span class="facts__label">Classes in Ruiru:</span> To be announced</li>
+    </ul>
+  </aside>
+</section>
+
+{# ===== Courses ===== #}
+<section class="wofbi-courses" id="courses">
+  <div class="container">
+    <div class="wofbi-courses__head">
+      <p class="wofbi-eyebrow">Programs</p>
+      <h2 class="wofbi-heading">Certificate and diploma courses</h2>
+      <p>Choose the program that fits where you are, then contact us to enrol.</p>
+    </div>
+
+    <div class="course-grid">
+      {% for c in wofbi %}
+        <article class="course">
+          <div class="course__icon" aria-hidden="true">{{ c.icon }}</div>
+          <p class="course__level">{{ c.level }} ({{ c.code }})</p>
+          <h3 class="course__title">{{ c.title }}</h3>
+          <p class="course__count">{{ c.count }}</p>
+          <p class="course__text">{{ c.text }}</p>
+          <div class="course__action">
+            <a class="btn btn--primary" href="{{ '/contact/' | url }}">Ask about this course</a>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ===== Call to action ===== #}
+<section class="wofbi-cta">
+  <div class="container">
+    <h2 class="wofbi-cta__title">Ready to enrol?</h2>
+    <p>Contact the church office to find out when the next class starts.</p>
+    <a class="btn btn--gold" href="{{ '/contact/' | url }}">Contact us</a>
+  </div>
+</section>

@@ -1,0 +1,99 @@
+---
+layout: base.njk
+title: JBS
+css: jbs.css
+description: Junior Bible School (JBS) at Winners Chapel International Ruiru. Learn about the school and see our recent graduates.
+---
+
+{# ===== Header band ===== #}
+<section class="page-band">
+  <div class="container page-band__inner">
+    <div>
+      <p class="pill"><span class="pill__dot"></span>Junior Bible School</p>
+      <h1 class="page-band__title">JBS</h1>
+    </div>
+    <p class="page-band__summary">Where our young people learn the Word of God and grow in faith.</p>
+  </div>
+</section>
+
+{# ===== About + quick facts ===== #}
+<section class="container jbs-about">
+  <div>
+    <p class="jbs-eyebrow">About JBS</p>
+    <h2 class="jbs-heading">The Junior Bible School</h2>
+    {# Replace these paragraphs with the real description of JBS #}
+    <p>JBS stands for Junior Bible School. It is the part of our church family dedicated to teaching young people the Word of God.</p>
+    <p>Details about who can attend, when classes meet and what is taught will be added here.</p>
+    <blockquote class="jbs-verse">
+      <p>Train up a child in the way he should go: and when he is old, he will not depart from it.</p>
+      <cite>Proverbs 22:6</cite>
+    </blockquote>
+  </div>
+
+  <aside class="facts">
+    <h2 class="facts__title">Quick facts</h2>
+    <ul class="facts__list">
+      <li><span class="facts__label">Full name:</span> Junior Bible School</li>
+      <li><span class="facts__label">Ages:</span> To be announced</li>
+      <li><span class="facts__label">Classes:</span> To be announced</li>
+      <li><span class="facts__label">Venue:</span> {{ site.name }}</li>
+    </ul>
+    <a class="btn btn--gold facts__btn" href="{{ '/contact/' | url }}">Ask about JBS</a>
+  </aside>
+</section>
+
+{# ===== What to expect ===== #}
+<section class="jbs-expect">
+  <div class="container">
+    <div class="jbs-head">
+      <p class="jbs-eyebrow">What to expect</p>
+      <h2 class="jbs-heading">Learning that fits young believers</h2>
+    </div>
+    <div class="expect-grid">
+      {% for item in jbs %}
+        <article class="expect">
+          <div class="expect__icon" aria-hidden="true">{{ item.icon }}</div>
+          <h3 class="expect__title">{{ item.title }}</h3>
+          <p>{{ item.text }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ===== Gallery ===== #}
+<section class="jbs-gallery" id="gallery">
+  <div class="container">
+    <div class="jbs-head">
+      <p class="jbs-eyebrow">Gallery</p>
+      <h2 class="jbs-heading">Our recent graduates</h2>
+      <p>Celebrating the students who have completed Junior Bible School.</p>
+    </div>
+
+    {% if jbsGallery.length %}
+      <div class="gallery">
+        {% for img in jbsGallery %}
+          <button class="gallery__item" type="button" data-full="{{ ('/Assets/images/jbs/' + img.file) | url }}" aria-label="View photo {{ loop.index }} larger">
+            <img src="{{ ('/Assets/images/jbs/' + img.file) | url }}" alt="JBS graduates, photo {{ loop.index }}" loading="lazy">
+          </button>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="gallery__empty">Photos of our graduates are coming soon.</p>
+    {% endif %}
+  </div>
+</section>
+
+<dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+  <button class="lightbox__close" type="button" aria-label="Close">&times;</button>
+  <img id="lightbox-img" alt="">
+</dialog>
+
+{# ===== Call to action ===== #}
+<section class="jbs-cta">
+  <div class="container">
+    <h2 class="jbs-cta__title">Want your child to join JBS?</h2>
+    <p>Contact the church office to find out about the next class.</p>
+    <a class="btn btn--gold" href="{{ '/contact/' | url }}">Contact us</a>
+  </div>
+</section>

@@ -1,0 +1,26 @@
+[
+  {
+    "icon": "📘",
+    "level": "Certificate",
+    "code": "BCC",
+    "title": "Basic Certificate Course",
+    "count": "12 courses",
+    "text": "A certificate program made up of twelve courses. Ask us about start dates, requirements and fees."
+  },
+  {
+    "icon": "🎓",
+    "level": "Certificate",
+    "code": "LCC",
+    "title": "Leadership Certificate Course",
+    "count": "12 courses",
+    "text": "A leadership-focused certificate program made up of twelve courses. Ask us about start dates, requirements and fees."
+  },
+  {
+    "icon": "🏅",
+    "level": "Diploma",
+    "code": "LDC",
+    "title": "Leadership Diploma Course",
+    "count": "12 courses",
+    "text": "A leadership-focused diploma program made up of twelve courses. Ask us about start dates, requirements and fees."
+  }
+]

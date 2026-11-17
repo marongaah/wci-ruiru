@@ -1,0 +1,240 @@
+---
+layout: base.njk
+title: Home
+css: index.css
+---
+
+{# ===== 1. Hero ===== #}
+<section class="hero">
+  <div class="hero__content">
+    <div class="hero__text">
+      <p class="hero__eyebrow">Ruiru, Kenya</p>
+      <h1 class="hero__title"><span class="hero__gold">Winners Chapel</span> International Ruiru</h1>
+      <p class="hero__lead">A place to worship, learn God's Word and belong.</p>
+      <blockquote class="scripture scripture--light scripture--hero">
+        <p>I was glad when they said unto me, Let us go into the house of the Lord.</p>
+        <cite>Psalm 122:1</cite>
+      </blockquote>
+      <div class="hero__actions">
+        <a class="btn btn--gold" href="#service-times">Plan your visit</a>
+        <a class="hero__link" href="{{ '/resources/' | url }}">Read the latest teaching</a>
+      </div>
+
+      <div class="hero__card">
+        <div>
+          <p class="hero__card-label">Service times</p>
+          {% for s in site.services %}
+            <p class="hero__card-row">{{ s.day }}, {{ s.time }}</p>
+          {% endfor %}
+        </div>
+        <a class="hero__card-go" href="#service-times" aria-label="See service times">&rarr;</a>
+      </div>
+    </div>
+
+    {# Keep YOUR image file name here. Update the alt text when you change the poster. #}
+    <figure class="hero__media">
+      <img class="hero__poster" src="{{ '/Assets/images/hero.jpg' | url }}" alt="Far Above event poster, 13 December 2026">
+    </figure>
+  </div>
+</section>
+
+{# ===== 2. Service times and location ===== #}
+<section class="home-section home-section--service" id="service-times">
+  <div class="container">
+    <h2 class="home-heading">Join us this week</h2>
+    <blockquote class="scripture scripture--light">
+      <p>For where two or three are gathered together in my name, there am I in the midst of them.</p>
+      <cite>Matthew 18:20</cite>
+    </blockquote>
+    <div class="times">
+      {% for s in site.services %}
+        <div class="times__item">
+          <p class="times__day">{{ s.day }}</p>
+          <p class="times__name">{{ s.name }}</p>
+          <p class="times__time">{{ s.time }}</p>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="times__place">
+      <p>Find us in {{ site.address }}.</p>
+      <a class="btn btn--gold" href="{{ '/contact/' | url }}">Contact us</a>
+    </div>
+  </div>
+</section>
+
+{# ===== 3. About us ===== #}
+<section class="home-section home-section--tint" id="about">
+  <div class="container">
+    <div class="about-intro">
+      <p class="home-eyebrow">About us</p>
+      <h2 class="home-heading">A church family where you belong</h2>
+      {# Replace this text with your church's own story #}
+      <p class="about-intro__text">{{ site.name }} is a church family in Ruiru, Kenya, gathered to worship God, learn His Word and serve our community. Whether you are new to faith or have walked with God for years, there is a place for you here.</p>
+      <blockquote class="scripture">
+        <p>Now therefore ye are no more strangers and foreigners, but fellowcitizens with the saints, and of the household of God.</p>
+        <cite>Ephesians 2:19</cite>
+      </blockquote>
+    </div>
+
+    <div class="pillars">
+      {% for p in about %}
+        <article class="pillar">
+          <div class="pillar__icon" aria-hidden="true">{{ p.icon }}</div>
+          <h3 class="pillar__title">{{ p.title }}</h3>
+          <p class="pillar__text">{{ p.text }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ===== 4. Service units ===== #}
+<section class="home-section" id="units">
+  <div class="container">
+    <h2 class="home-heading">Service units</h2>
+    <blockquote class="scripture">
+      <p>As every man hath received the gift, even so minister the same one to another, as good stewards of the manifold grace of God.</p>
+      <cite>1 Peter 4:10</cite>
+    </blockquote>
+    <div class="units">
+      {% for unit in collections.serviceUnitsOrdered %}
+        <a class="unit" href="{{ unit.url | url }}">
+          <img src="{{ unit.data.image | url }}" alt="">
+          <div class="unit__body">
+            <p class="unit__label">{{ unit.data.label or "Service unit" }}</p>
+            <h3 class="unit__title">{{ unit.data.title }}</h3>
+            <p class="unit__text">{{ unit.data.summary }}</p>
+            <p class="unit__more">Learn more</p>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+    <p class="home-more"><a class="btn btn--primary" href="{{ '/service-units/' | url }}">See all service units</a></p>
+  </div>
+</section>
+
+{# ===== 5. Church transport ===== #}
+<section class="home-section home-section--tint" id="transport">
+  <div class="container transport">
+    <div class="transport__text">
+      <p class="home-eyebrow">Church transport</p>
+      <h2 class="home-heading">We will help you get to church</h2>
+      <p class="transport__lead">No way to church? Our transport team serves {{ transport | length }} routes and brings members to {{ site.name }}.</p>
+      <blockquote class="scripture">
+        <p>Not forsaking the assembling of ourselves together, as the manner of some is; but exhorting one another: and so much the more, as ye see the day approaching.</p>
+        <cite>Hebrews 10:25</cite>
+      </blockquote>
+      <div class="transport__actions">
+        <a class="btn btn--primary" href="{{ '/contact/' | url }}">Ask about a ride</a>
+        <a class="transport__link" href="{{ '/service-units/transport-team/' | url }}">Meet the transport team</a>
+      </div>
+    </div>
+
+    <div class="board">
+      <div class="board__head"><span>Pick-up route</span><span>Destination</span></div>
+      <ul class="board__list">
+        {% for route in transport %}
+          <li class="board__row">
+            <span class="board__bus" aria-hidden="true">&#128652;</span>
+            <span class="board__from">{{ route }}</span>
+            <span class="board__line" aria-hidden="true"></span>
+            <span class="board__to">Church</span>
+          </li>
+        {% endfor %}
+      </ul>
+      <p class="board__note">Pick-up times are shared by the transport team. Contact us to ask about your route.</p>
+    </div>
+  </div>
+</section>
+
+
+
+{# ===== 6. Upcoming events and announcements ===== #}
+<section class="home-section events-section" id="events">
+  <div class="container">
+
+    <div class="events-heading">
+      <div>
+        <p class="home-eyebrow">What's happening</p>
+        <h2 class="home-heading">Events & Announcements</h2>
+        <p class="events-intro">
+          Stay connected with what's happening in our church family.
+          Join us for fellowship, worship and special gatherings.
+        </p>
+      </div>
+
+      <div class="events-heading__icon" aria-hidden="true">
+        ✦
+      </div>
+    </div>
+
+    <div class="events-grid">
+
+      {% for e in events %}
+
+        <article class="event-card"
+          style="--event-image: url('{{ e.image | url }}');">
+
+          <div class="event-card__content">
+
+            <div class="event-card__top">
+              <span class="event-card__tag">CHURCH EVENT</span>
+            </div>
+
+            <div class="event-card__body">
+              <p class="event-card__date">{{ e.date }}</p>
+
+              <h3>{{ e.title }}</h3>
+
+              <p>{{ e.details }}</p>
+
+              <a href="/contact/" class="event-card__button">
+                Explore <span>&rarr;</span>
+              </a>
+            </div>
+
+          </div>
+
+        </article>
+
+      {% else %}
+
+        <div class="events-empty">
+          <span>✦</span>
+          <h3>Something wonderful is coming</h3>
+          <p>New events and announcements will appear here. Stay connected!</p>
+        </div>
+
+      {% endfor %}
+
+    </div>
+  </div>
+</section>
+
+
+{# ===== 7. Contact and map ===== #}
+<section class="home-section home-section--deep" id="visit">
+  <div class="container contact">
+    <div class="contact__info">
+      <h2 class="home-heading">Visit or get in touch</h2>
+      <blockquote class="scripture scripture--light">
+        <p>Wherefore receive ye one another, as Christ also received us to the glory of God.</p>
+        <cite>Romans 15:7</cite>
+      </blockquote>
+      <p>{{ site.name }}</p>
+      <p>{{ site.address }}</p>
+      <p>{{ site.phone }}</p>
+      <p>{{ site.email }}</p>
+      <div class="contact__actions">
+        <a class="btn btn--gold" href="https://www.google.com/maps/dir/?api=1&destination=-1.1213238,36.9669949" target="_blank" rel="noopener">Get directions</a>
+        <a class="btn btn--light" href="{{ '/contact/' | url }}">Contact us</a>
+      </div>
+    </div>
+    <iframe
+      class="contact__map"
+      title="Map showing {{ site.name }}"
+      src="https://maps.google.com/maps?q=-1.1213238,36.9669949&z=16&output=embed"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</section>

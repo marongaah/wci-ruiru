@@ -1,0 +1,39 @@
+---
+layout: base.njk
+title: Service Units
+css: service-units.css
+---
+<section class="unit-search">
+  <div class="container">
+    <p class="unit-search__eyebrow">Serve with us</p>
+    <h1 class="page-title">Find a service unit</h1>
+    <p class="page-intro">Search by name or choose a group, then open a unit to see what it does and how to join.</p>
+
+    <form class="searchbar" role="search" id="unit-form">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="unit-search" type="search" placeholder="Search units, e.g. Choir or Ushers" aria-label="Search service units" autocomplete="off">
+      <select id="unit-category" aria-label="Filter by group">
+        <option value="all">All groups</option>
+      </select>
+      <button class="btn btn--primary" type="submit">Find units</button>
+    </form>
+    <p class="searchcount" id="unit-count" aria-live="polite"></p>
+  </div>
+</section>
+
+<section class="container">
+  <div class="units" id="unit-list">
+    {% for unit in collections.serviceUnitsOrdered %}
+      <a class="unit" href="{{ unit.url | url }}" data-search="{{ (unit.data.title + ' ' + unit.data.summary) | lower }}" data-category="{{ unit.data.category }}">
+        <img src="{{ unit.data.image | url }}" alt="">
+        <div class="unit__body">
+          <p class="unit__label">{{ unit.data.label or "Service unit" }}</p>
+          <h2 class="unit__title">{{ unit.data.title }}</h2>
+          <p class="unit__text">{{ unit.data.summary }}</p>
+          <p class="unit__more">Learn more</p>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+  <p class="unit-empty" id="unit-empty" hidden>No service units match your search. Try a different word or choose All groups.</p>
+</section>

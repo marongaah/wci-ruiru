@@ -1,0 +1,33 @@
+/* ===== Resources page and post pages ===== */
+
+.filters { display: flex; gap: 0.5rem; margin: 1.5rem 0; flex-wrap: wrap; }
+
+.filter {
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--color-primary);
+  background: #fff;
+  color: var(--color-primary);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.filter.is-active { background: var(--color-primary); color: #fff; }
+
+.resource-list { display: grid; gap: 1rem; }
+
+.resource-card {
+  background: var(--color-muted);
+  border-left: 4px solid var(--color-accent);
+  padding: 1rem 1.25rem;
+  border-radius: 6px;
+}
+
+.resource-card__meta,
+.post__meta { color: #666; font-size: 0.9rem; }
+
+.post { max-width: 760px; }
+.post h1 { margin: 0.25rem 0 1rem; }
+.post audio { width: 100%; margin-bottom: 1rem; }
+.post__body > * + * { margin-top: 1rem; }
+.post__body ul { padding-left: 1.5rem; }
+.post__body blockquote { border-left: 4px solid var(--color-accent); padding-left: 1rem; color: #555; }

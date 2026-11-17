@@ -1,0 +1,119 @@
+---
+layout: base.njk
+title: YAF
+css: yaf.css
+description: Youth Alive Fellowship (YAF) at Winners Chapel International Ruiru. Picnics, sports, hikes, worship experiences and Fire Night for young people.
+leader:
+meets:
+# whatsapp: the leader's number with country code, no + or spaces, e.g. 2547XXXXXXXX
+whatsapp:
+---
+
+{# ===== Hero ===== #}
+<section class="yaf-hero">
+  <div class="container yaf-hero__inner">
+    <p class="yaf-pill">YAF</p>
+    <h1 class="yaf-hero__title">Youth Alive <span class="yaf-gold">Fellowship</span></h1>
+    <p class="yaf-hero__lead">Where young people meet God, make real friends and have a great time doing it.</p>
+    <blockquote class="yaf-verse yaf-verse--light">
+      <p>Let no man despise thy youth; but be thou an example of the believers, in word, in conversation, in charity, in spirit, in faith, in purity.</p>
+      <cite>1 Timothy 4:12</cite>
+    </blockquote>
+    <div class="yaf-hero__actions">
+      {% if whatsapp %}
+        {% set joinMsg = "Hello, I would like to join Youth Alive Fellowship (YAF)." %}
+        <a class="btn btn--gold" href="https://wa.me/{{ whatsapp }}?text={{ joinMsg | urlencode }}" target="_blank" rel="noopener">Join the fellowship</a>
+      {% else %}
+        <a class="btn btn--gold" href="{{ '/contact/' | url }}">Join the fellowship</a>
+      {% endif %}
+      <a class="yaf-hero__link" href="#events">See what we do</a>
+    </div>
+  </div>
+</section>
+
+{# ===== Moving ticker ===== #}
+<div class="yaf-ticker" aria-hidden="true">
+  <div class="yaf-ticker__track">
+    {% for i in [1, 2] %}
+      <div class="yaf-ticker__group">
+        <span>Picnics</span><span class="yaf-ticker__sep">&#10022;</span>
+        <span>Sports</span><span class="yaf-ticker__sep">&#10022;</span>
+        <span>Hikes</span><span class="yaf-ticker__sep">&#10022;</span>
+        <span>Worship</span><span class="yaf-ticker__sep">&#10022;</span>
+        <span>Fire Night</span><span class="yaf-ticker__sep">&#10022;</span>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{# ===== What we do ===== #}
+<section class="yaf-section" id="events">
+  <div class="container">
+    <div class="yaf-head">
+      <h2 class="yaf-heading">Life in YAF</h2>
+      <p>Something for every kind of young person: fun, friendship and faith, all in one place.</p>
+      <blockquote class="yaf-verse yaf-verse--center">
+        <p>They that wait upon the Lord shall renew their strength; they shall mount up with wings as eagles; they shall run, and not be weary; and they shall walk, and not faint.</p>
+        <cite>Isaiah 40:31</cite>
+      </blockquote>
+    </div>
+
+    <div class="yaf-grid">
+      {% for item in yaf %}
+        <article class="yaf-card">
+          <div class="yaf-card__icon" aria-hidden="true">{{ item.icon }}</div>
+          <h3 class="yaf-card__title">{{ item.title }}</h3>
+          <p>{{ item.text }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ===== Fire Night spotlight ===== #}
+<section class="yaf-fire" id="fire-night">
+  <div class="container yaf-fire__inner">
+    <div>
+      <p class="yaf-pill yaf-pill--fire">Youth kesha</p>
+      <h2 class="yaf-fire__title">Fire Night</h2>
+      <p class="yaf-fire__text">Our youth kesha: a night of worship, prayer and the Word for young people who want more of God. Come ready to be stirred up.</p>
+      <blockquote class="yaf-verse yaf-verse--light">
+        <p>Not slothful in business; fervent in spirit; serving the Lord.</p>
+        <cite>Romans 12:11</cite>
+      </blockquote>
+      <ul class="yaf-fire__facts">
+        <li><strong>Next Fire Night:</strong> To be announced</li>
+        <li><strong>Time:</strong> To be announced</li>
+      </ul>
+    </div>
+    <div class="yaf-fire__flame" aria-hidden="true">&#128293;</div>
+  </div>
+</section>
+
+{# ===== Join ===== #}
+<section class="container yaf-join" id="join">
+  <div>
+    <h2 class="yaf-heading">Your place is here</h2>
+    <p>Youth Alive Fellowship is the youth ministry of {{ site.name }}. Whether you are new to church or have been here all your life, come and be part of the family.</p>
+    <blockquote class="yaf-verse">
+      <p>Iron sharpeneth iron; so a man sharpeneth the countenance of his friend.</p>
+      <cite>Proverbs 27:17</cite>
+    </blockquote>
+  </div>
+
+  <aside class="yaf-facts">
+    <h2 class="yaf-facts__title">Quick facts</h2>
+    <ul class="yaf-facts__list">
+      <li><span class="yaf-facts__label">Full name:</span> Youth Alive Fellowship</li>
+      <li><span class="yaf-facts__label">For:</span> Young people</li>
+      <li><span class="yaf-facts__label">Meets:</span> {{ meets or "To be announced" }}</li>
+      <li><span class="yaf-facts__label">Leader:</span> {{ leader or "To be announced" }}</li>
+    </ul>
+    {% if whatsapp %}
+      {% set msg = "Hello, I would like to know more about Youth Alive Fellowship (YAF)." %}
+      <a class="btn btn--whatsapp" href="https://wa.me/{{ whatsapp }}?text={{ msg | urlencode }}" target="_blank" rel="noopener">Chat with the YAF leader on WhatsApp</a>
+    {% else %}
+      <p class="yaf-facts__note">The leader's WhatsApp number will be added soon. In the meantime, <a href="{{ '/contact/' | url }}">contact the church office</a>.</p>
+    {% endif %}
+  </aside>
+</section>
