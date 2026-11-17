@@ -16,7 +16,7 @@ css: index.css
         <cite>Psalm 122:1</cite>
       </blockquote>
       <div class="hero__actions">
-        <a class="btn btn--gold" href="#service-times">Plan your visit</a>
+        <a class="btn btn--gold" href="#service-times">Contact Us</a>
         <a class="hero__link" href="{{ '/resources/' | url }}">Read the latest teaching</a>
       </div>
 
@@ -36,6 +36,33 @@ css: index.css
       <img class="hero__poster" src="{{ '/Assets/images/hero.jpg' | url }}" alt="Far Above event poster, 13 December 2026">
     </figure>
   </div>
+
+  {% if event.show %}
+  <div class="countdown" data-countdown="{{ event.start }}">
+    <div class="container countdown__inner">
+      <div class="countdown__info">
+        <p class="countdown__title">{{ event.title }} &middot; <span class="countdown__theme">{{ event.theme }}</span></p>
+        <p class="countdown__when">{{ event.when }}</p>
+      </div>
+
+      <div class="countdown__timer" role="timer" aria-label="Time until {{ event.title }}">
+        <div class="countdown__box"><span class="countdown__num" data-unit="d">0</span><span class="countdown__label">Days</span></div>
+        <div class="countdown__box"><span class="countdown__num" data-unit="h">00</span><span class="countdown__label">Hrs</span></div>
+        <div class="countdown__box"><span class="countdown__num" data-unit="m">00</span><span class="countdown__label">Mins</span></div>
+        <div class="countdown__box"><span class="countdown__num" data-unit="s">00</span><span class="countdown__label">Secs</span></div>
+      </div>
+      <p class="countdown__live" hidden>It has begun. Join us!</p>
+
+      <details class="countdown__cal">
+        <summary class="btn countdown__btn">Add to calendar</summary>
+        <div class="countdown__menu">
+          <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text={{ (event.title + ' ' + event.theme) | urlencode }}&dates={{ event.googleDates }}&location={{ site.name | urlencode }}" target="_blank" rel="noopener">Google Calendar</a>
+          <a href="{{ '/Assets/shiloh-2026.ics' | url }}" download>Apple, Outlook (.ics file)</a>
+        </div>
+      </details>
+    </div>
+  </div>
+  {% endif %}
 </section>
 
 {# ===== 2. Service times and location ===== #}
