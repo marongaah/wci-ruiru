@@ -828,3 +828,36 @@
   .countdown__num { font-size: 1.35rem; }
   .countdown__menu { right: 50%; transform: translateX(50%); }
 }
+
+/* ===== Homepage service units: one row you scroll sideways ===== */
+#units .units {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;     /* each card settles neatly in place */
+  -webkit-overflow-scrolling: touch;
+  padding: 0.25rem 0.25rem 1.25rem;
+  scroll-padding-inline: 0.25rem;
+}
+#units .unit {
+  flex: 0 0 300px;                   /* fixed card width, so the next card peeks in */
+  scroll-snap-align: start;
+}
+
+/* Slim, neat scrollbar on desktop */
+#units .units { scrollbar-width: thin; scrollbar-color: var(--color-primary) #e9e9ec; }
+#units .units::-webkit-scrollbar { height: 8px; }
+#units .units::-webkit-scrollbar-track { background: #e9e9ec; border-radius: 999px; }
+#units .units::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: 999px; }
+
+/* Phone: cards run to the screen edges, scrollbar hidden */
+@media (max-width: 700px) {
+  #units .units {
+    margin-inline: -1rem;
+    padding-inline: 1rem;
+    scroll-padding-inline: 1rem;
+    scrollbar-width: none;
+  }
+  #units .units::-webkit-scrollbar { display: none; }
+  #units .unit { flex-basis: 78%; }  /* 78% wide on phones */
+}
