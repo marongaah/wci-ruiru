@@ -281,3 +281,24 @@
   .unit-more .units::-webkit-scrollbar { display: none; }
   .unit-more .unit { flex: 0 0 78%; scroll-snap-align: start; }
 }
+
+/* Stop wide swipe rows from stretching the page on phones */
+.unit-detail,
+.unit-detail__main,
+.unit-detail > *,
+.unit-hero__inner > * {
+  min-width: 0;                 /* lets a grid column shrink to the screen width */
+}
+
+@media (max-width: 900px) {
+  .unit-detail,
+  .unit-hero__inner {
+    grid-template-columns: minmax(0, 1fr);   /* one column, never wider than the screen */
+  }
+}
+
+.unit-join,
+.unit-body,
+.unit-more .container {
+  max-width: 100%;
+}
