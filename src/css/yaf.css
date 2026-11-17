@@ -226,6 +226,7 @@
     scroll-snap-align: start;
   }
 }
+
 /* Photo viewer (pop-up) */
 .lightbox {
   border: 0;
