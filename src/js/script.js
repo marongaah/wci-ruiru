@@ -112,3 +112,35 @@ if (lightbox) {
     if (e.target === lightbox || e.target.classList.contains("lightbox__close")) lightbox.close();
   });
 }
+
+// ===== Event countdown banner =====
+const countdown = document.querySelector("[data-countdown]");
+if (countdown) {
+  const target = new Date(countdown.dataset.countdown).getTime();
+  const units = {
+    d: countdown.querySelector('[data-unit="d"]'),
+    h: countdown.querySelector('[data-unit="h"]'),
+    m: countdown.querySelector('[data-unit="m"]'),
+    s: countdown.querySelector('[data-unit="s"]'),
+  };
+  const timer = countdown.querySelector(".countdown__timer");
+  const live = countdown.querySelector(".countdown__live");
+  const pad = (n) => String(n).padStart(2, "0");
+
+  function tick() {
+    const diff = target - Date.now();
+    if (diff <= 0) {
+      timer.hidden = true;     // the event has begun
+      live.hidden = false;
+      return false;
+    }
+    units.d.textContent = Math.floor(diff / 86400000);
+    units.h.textContent = pad(Math.floor((diff % 86400000) / 3600000));
+    units.m.textContent = pad(Math.floor((diff % 3600000) / 60000));
+    units.s.textContent = pad(Math.floor((diff % 60000) / 1000));
+    return true;
+  }
+  if (tick()) {
+    const interval = setInterval(() => { if (!tick()) clearInterval(interval); }, 1000);
+  }
+}
