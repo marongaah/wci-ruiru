@@ -2,6 +2,9 @@
 layout: base.njk
 css: service-units.css
 ---
+{% set info = unitContent[page.fileSlug] %}
+{% set joinMsg = "Hello, I would like to join the " + title + "." %}
+
 <section class="unit-hero">
   <div class="container unit-hero__inner">
     <div>
@@ -17,8 +20,74 @@ css: service-units.css
     <p class="back"><a href="{{ '/service-units/' | url }}">&larr; All service units</a></p>
     <p class="unit-eyebrow">About this unit</p>
     <h2 class="unit-detail__heading">Overview</h2>
+
     <div class="unit-body">
-      {{ content | safe }}
+      {% if info %}
+        <h2>What we do</h2>
+        {% for para in info.intro %}<p>{{ para }}</p>{% endfor %}
+
+        <h2>How we serve</h2>
+        <ul class="unit-list">
+          {% for item in info.does %}<li>{{ item }}</li>{% endfor %}
+        </ul>
+
+        {% if info.heart %}
+          <h2>Our heart</h2>
+          <div class="unit-heart">
+            {% for h in info.heart %}
+              <div class="unit-heart__card">
+                <h3>{{ h.title }}</h3>
+                <p>{{ h.text }}</p>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        <h2>What the Word says</h2>
+        {% for s in info.scriptures %}
+          <blockquote class="unit-verse">
+            <p>{{ s.text }}</p>
+            <cite>{{ s.ref }}</cite>
+          </blockquote>
+        {% endfor %}
+      {% else %}
+        {{ content | safe }}
+      {% endif %}
+    </div>
+
+    {# ===== How to join ===== #}
+    <div class="unit-join">
+      <h2>How to join</h2>
+      <p class="unit-join__lead">Joining the {{ title }} takes three simple steps.</p>
+      <ol class="unit-steps">
+        <li>
+          <span class="unit-steps__num">1</span>
+          <div>
+            <h3>Say hello on WhatsApp</h3>
+            <p>Click the WhatsApp button on this page to message the leader of the {{ title }}. A short note with your name is enough.</p>
+          </div>
+        </li>
+        <li>
+          <span class="unit-steps__num">2</span>
+          <div>
+            <h3>Get added to the group</h3>
+            <p>The leader will add you to the unit's WhatsApp group, where announcements, meeting times and updates are shared.</p>
+          </div>
+        </li>
+        <li>
+          <span class="unit-steps__num">3</span>
+          <div>
+            <h3>Come and serve</h3>
+            <p>Join us at the next meeting or service. You will be welcomed, shown what to do and served alongside the team.</p>
+          </div>
+        </li>
+      </ol>
+
+      {% if whatsapp %}
+        <a class="btn btn--whatsapp" href="https://wa.me/{{ whatsapp }}?text={{ joinMsg | urlencode }}" target="_blank" rel="noopener">Message the leader on WhatsApp</a>
+      {% else %}
+        <p class="unit-join__note">The leader's WhatsApp link will be added soon. Until then, <a href="{{ '/contact/' | url }}">contact the church office</a> and we will connect you with the leader.</p>
+      {% endif %}
     </div>
   </div>
 
@@ -40,4 +109,25 @@ css: service-units.css
       <p class="facts__note">The leader's WhatsApp number will be added soon. In the meantime, <a href="{{ '/contact/' | url }}">contact the church office</a>.</p>
     {% endif %}
   </aside>
+</section>
+
+{# ===== Other units ===== #}
+<section class="unit-more">
+  <div class="container">
+    <h2 class="unit-more__title">Explore other service units</h2>
+       <div class="units">
+      {% for u in collections.serviceUnitsOrdered | otherUnits(page.url, 3) %}
+        <a class="unit" href="{{ u.url | url }}">
+          <img src="{{ u.data.image | url }}" alt="">
+          <div class="unit__body">
+            <p class="unit__label">{{ u.data.category or "Service unit" }}</p>
+            <h3 class="unit__title">{{ u.data.title }}</h3>
+            <p class="unit__text">{{ u.data.summary }}</p>
+            <p class="unit__more">Learn more</p>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+    <p class="unit-more__all"><a class="btn btn--primary" href="{{ '/service-units/' | url }}">See all service units</a></p>
+  </div>
 </section>

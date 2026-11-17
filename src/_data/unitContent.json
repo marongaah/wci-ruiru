@@ -1,0 +1,454 @@
+{
+  "sanctuary-keepers": {
+    "intro": [
+      "The Sanctuary Keepers care for the house of God. Before the congregation arrives, the sanctuary is cleaned, arranged and made ready, and after each service it is put back in order.",
+      "It is quiet work, often done before anyone else arrives, but it is service done unto the Lord. A prepared sanctuary helps people to worship without distraction."
+    ],
+    "does": [
+      "Clean and prepare the sanctuary before every service",
+      "Arrange seats, aisles and the altar area",
+      "Keep the building tidy and in good order after services",
+      "Report anything that needs repair or attention"
+    ],
+    "scriptures": [
+      {
+        "text": "For a day in thy courts is better than a thousand. I had rather be a doorkeeper in the house of my God, than to dwell in the tents of wickedness.",
+        "ref": "Psalm 84:10"
+      },
+      {
+        "text": "Let all things be done decently and in order.",
+        "ref": "1 Corinthians 14:40"
+      }
+    ],
+    "heart": [
+      {
+        "title": "Faithfulness",
+        "text": "We show up early and finish well, even when no one is watching."
+      },
+      {
+        "title": "Reverence",
+        "text": "We treat the house of God with honour in how we clean, arrange and care for it."
+      },
+      {
+        "title": "Teamwork",
+        "text": "A ready sanctuary is the work of many hands, each doing their part."
+      }
+    ]
+  },
+  "technical-team": {
+    "intro": [
+      "The Technical Team handles the sound, projection, lighting and recording that carry our services to the people in the room and beyond it.",
+      "When the technology works well, nobody notices it, and the message is heard clearly. We serve with skill and excellence so that the Word and worship come across without distraction."
+    ],
+    "does": [
+      "Run the sound system, microphones and instruments",
+      "Operate screens, lyrics and presentations",
+      "Record and share services",
+      "Set up and look after the equipment"
+    ],
+    "scriptures": [
+      {
+        "text": "And whatsoever ye do, do it heartily, as to the Lord, and not unto men.",
+        "ref": "Colossians 3:23"
+      },
+      {
+        "text": "And I have filled him with the spirit of God, in wisdom, and in understanding, and in knowledge, and in all manner of workmanship.",
+        "ref": "Exodus 31:3"
+      }
+    ],
+    "heart": [
+      {
+        "title": "Excellence",
+        "text": "We learn our equipment well and prepare before every service."
+      },
+      {
+        "title": "Humility",
+        "text": "The best tech work goes unnoticed. The message is what matters."
+      },
+      {
+        "title": "Learning",
+        "text": "We train and help one another grow in skill, with patience."
+      }
+    ]
+  },
+  "choir": {
+    "intro": [
+      "The Choir leads the congregation into the presence of God through song. Through rehearsals, prayer and practice, we prepare songs that lift the church to worship.",
+      "Singing is ministry, not performance. We sing to bring people closer to God and to lift the faith of everyone who is listening."
+    ],
+    "does": [
+      "Lead praise and worship in our services",
+      "Rehearse songs and harmonies during the week",
+      "Pray together before ministering",
+      "Take part in special services and programmes"
+    ],
+    "scriptures": [
+      {
+        "text": "Make a joyful noise unto the Lord, all ye lands. Serve the Lord with gladness: come before his presence with singing.",
+        "ref": "Psalm 100:1-2"
+      }
+    ],
+    "heart": [
+      {
+        "title": "Worship first",
+        "text": "We sing to honour God, and the songs follow from a heart that loves Him."
+      },
+      {
+        "title": "Unity",
+        "text": "Many voices, one sound. We rehearse together and pray together."
+      },
+      {
+        "title": "Preparation",
+        "text": "We practise in the week so that Sunday flows without distraction."
+      }
+    ]
+  },
+  "ushers": {
+    "intro": [
+      "The Ushers are often the first faces people meet at church. We welcome members and visitors with a warm smile, guide them to their seats and help the service run in good order.",
+      "Good ushering is a ministry of welcome and care. Everyone who walks through the door should feel that they are expected and cared for."
+    ],
+    "does": [
+      "Welcome people at the door and show them to their seats",
+      "Help first-time visitors feel at home",
+      "Assist during offerings and special moments in the service",
+      "Keep order so that the service flows peacefully"
+    ],
+    "scriptures": [
+      {
+        "text": "Be not forgetful to entertain strangers: for thereby some have entertained angels unawares.",
+        "ref": "Hebrews 13:2"
+      },
+      {
+        "text": "Let all things be done decently and in order.",
+        "ref": "1 Corinthians 14:40"
+      }
+    ],
+    "heart": [
+      {
+        "title": "Welcome",
+        "text": "A warm greeting at the door can change how someone experiences church."
+      },
+      {
+        "title": "Order",
+        "text": "We help each service run smoothly and peacefully."
+      },
+      {
+        "title": "Care",
+        "text": "We notice people: the new face, the elderly, the one who needs a hand."
+      }
+    ]
+  },
+  "transport-team": {
+    "intro": [
+      "The Transport Team makes sure that distance is never the reason someone misses church. Every Sunday we pick up members from routes across Ruiru and Juja and bring them to the house of God.",
+      "Behind every trip is a driver, a coordinator and a heart to serve. It is a practical way of carrying one another's burdens."
+    ],
+    "does": [
+      "Run church transport on set routes",
+      "Coordinate pick-up points and times",
+      "Keep members informed about their route",
+      "Make sure everyone travels safely"
+    ],
+    "scriptures": [
+      {
+        "text": "Bear ye one another's burdens, and so fulfil the law of Christ.",
+        "ref": "Galatians 6:2"
+      }
+    ],
+    "heart": [
+      {
+        "title": "Reliability",
+        "text": "People plan their Sunday around us, so we are on time and consistent."
+      },
+      {
+        "title": "Safety",
+        "text": "Every journey is made carefully, with respect for those in the vehicle."
+      },
+      {
+        "title": "Compassion",
+        "text": "We bring people to church who would otherwise be left behind."
+      }
+    ]
+  },
+  "security": {
+    "intro": [
+      "The Security unit keeps watch over the church premises, our vehicles and the people who gather here. We are on duty before, during and after services so that everyone can worship in peace.",
+      "We watch and we pray. Our trust is in the Lord, and we serve with alertness, courtesy and care."
+    ],
+    "does": [
+      "Watch the gates, parking and church premises",
+      "Help members and visitors arrive and leave safely",
+      "Respond quickly and calmly to any concern",
+      "Work closely with ushers and crowd control"
+    ],
+    "scriptures": [
+      {
+        "text": "Except the Lord build the house, they labour in vain that build it: except the Lord keep the city, the watchman waketh but in vain.",
+        "ref": "Psalm 127:1"
+      },
+      {
+        "text": "Nevertheless we made our prayer unto our God, and set a watch against them day and night, because of them.",
+        "ref": "Nehemiah 4:9"
+      }
+    ],
+    "heart": [
+      {
+        "title": "Vigilance",
+        "text": "We stay alert and observant while staying calm and courteous."
+      },
+      {
+        "title": "Prayer",
+        "text": "We trust God for protection, and we pray as we keep watch."
+      },
+      {
+        "title": "Respect",
+        "text": "We protect people without making anyone feel unwelcome."
+      }
+    ]
+  },
+  "communion": {
+    "intro": [
+      "The Communion unit prepares the table for the Lord's Supper. We make ready the elements with care, so that when the church comes to remember Jesus, everything is in place.",
+      "Communion is a sacred moment. We serve with reverence, remembering what Christ did for us on the cross."
+    ],
+    "does": [
+      "Prepare the communion elements before the service",
+      "Set up and clear the table",
+      "Serve the congregation in an orderly and respectful way",
+      "Keep everything clean and ready for the next time"
+    ],
+    "scriptures": [
+      {
+        "text": "For as often as ye eat this bread, and drink this cup, ye do shew the Lord's death till he come.",
+        "ref": "1 Corinthians 11:26"
+      }
+    ],
+    "heart": [
+      {
+        "title": "Reverence",
+        "text": "The table of the Lord is holy, and we prepare it with care."
+      },
+      {
+        "title": "Cleanliness",
+        "text": "Everything used is clean, orderly and prepared in advance."
+      },
+      {
+        "title": "Thanksgiving",
+        "text": "We serve with gratitude for what Christ has done for us."
+      }
+    ]
+  },
+  "crowd-control-unit": {
+    "intro": [
+      "The Crowd Control Unit guides the movement of people during big services and special programmes. We direct entry, seating and exit so that large crowds are safe and comfortable.",
+      "Our work keeps the peace, so that the people of God can focus on worship and the Word."
+    ],
+    "does": [
+      "Guide people in and out of the venue",
+      "Manage lines, seating and overflow areas",
+      "Keep walkways and exits clear",
+      "Work together with ushers and security"
+    ],
+    "scriptures": [
+      {
+        "text": "For God is not the author of confusion, but of peace, as in all churches of the saints.",
+        "ref": "1 Corinthians 14:33"
+      },
+      {
+        "text": "Let all things be done decently and in order.",
+        "ref": "1 Corinthians 14:40"
+      }
+    ],
+    "heart": [
+      {
+        "title": "Calm",
+        "text": "We guide people with a steady voice, never with panic or harshness."
+      },
+      {
+        "title": "Awareness",
+        "text": "We watch the flow of people and respond before problems begin."
+      },
+      {
+        "title": "Cooperation",
+        "text": "We work hand in hand with ushers and security."
+      }
+    ]
+  },
+  "holy-communion": {
+    "intro": [
+      "The Holy Communion unit serves at the Lord's table when the church comes together to remember the sacrifice of Jesus Christ.",
+      "We serve with a clean heart and a spirit of thanksgiving, helping each person to take part with reverence."
+    ],
+    "does": [
+      "Serve the communion table with care",
+      "Help the congregation come forward in an orderly way",
+      "Pray and prepare before ministering",
+      "Look after the communion items after the service"
+    ],
+    "scriptures": [
+      {
+        "text": "And he took bread, and gave thanks, and brake it, and gave unto them, saying, This is my body which is given for you: this do in remembrance of me.",
+        "ref": "Luke 22:19"
+      }
+    ],
+    "heart": [
+      {
+        "title": "Remembrance",
+        "text": "We help the church remember the cross and what it cost."
+      },
+      {
+        "title": "Order",
+        "text": "We serve in a way that keeps the table peaceful and dignified."
+      },
+      {
+        "title": "A clean heart",
+        "text": "We prepare ourselves in prayer before we serve others."
+      }
+    ]
+  },
+  "kingdom-advancement-prayer-challenge": {
+    "intro": [
+      "The Kingdom Advancement Prayer Challenge brings members together to pray for the growth of God's kingdom, for our church, our families and our nation.",
+      "We believe prayer changes things. Together we stand in the gap, seeking God for souls, for breakthroughs and for His will to be done."
+    ],
+    "does": [
+      "Gather for focused times of prayer",
+      "Pray for the church, the community and the nation",
+      "Stand with members who have prayer needs",
+      "Take part in special prayer challenges"
+    ],
+    "scriptures": [
+      {
+        "text": "Thy kingdom come, Thy will be done in earth, as it is in heaven.",
+        "ref": "Matthew 6:10"
+      },
+      {
+        "text": "The effectual fervent prayer of a righteous man availeth much.",
+        "ref": "James 5:16"
+      }
+    ],
+    "heart": [
+      {
+        "title": "Consistency",
+        "text": "Prayer grows through discipline, so we keep showing up."
+      },
+      {
+        "title": "Agreement",
+        "text": "When we pray together in one accord, we stand stronger."
+      },
+      {
+        "title": "Expectation",
+        "text": "We pray believing that God hears and answers."
+      }
+    ]
+  },
+  "evangelism": {
+    "intro": [
+      "The Evangelism unit takes the gospel of Jesus Christ to the people of Ruiru and beyond. We share the good news in the streets, in homes and wherever God opens a door.",
+      "Winning souls is the heart of the church. We also follow up with new believers and invite them into the family."
+    ],
+    "does": [
+      "Share the gospel through outreaches and visits",
+      "Invite new people to church",
+      "Follow up with new converts",
+      "Pray for the people we meet"
+    ],
+    "scriptures": [
+      {
+        "text": "And he said unto them, Go ye into all the world, and preach the gospel to every creature.",
+        "ref": "Mark 16:15"
+      },
+      {
+        "text": "How then shall they call on him in whom they have not believed? and how shall they believe in him of whom they have not heard? and how shall they hear without a preacher?",
+        "ref": "Romans 10:14"
+      }
+    ],
+    "heart": [
+      {
+        "title": "Boldness",
+        "text": "We share Jesus with confidence, knowing the gospel is the power of God."
+      },
+      {
+        "title": "Love",
+        "text": "People are not targets. They are souls God loves, and we treat them that way."
+      },
+      {
+        "title": "Follow-up",
+        "text": "The work does not end at a decision. We walk with new believers."
+      }
+    ]
+  },
+  "sunday-school": {
+    "intro": [
+      "The Sunday School unit teaches children the Word of God in a place that is safe, happy and full of life. While the main service is on, the children learn Bible stories, sing and grow in faith.",
+      "The earlier a child knows Jesus, the stronger their foundation. Our teachers love children and serve with patience."
+    ],
+    "does": [
+      "Teach Bible lessons suited to each age group",
+      "Lead songs, games and activities",
+      "Keep the children safe and cared for",
+      "Work with parents to help children grow in faith"
+    ],
+    "scriptures": [
+      {
+        "text": "Train up a child in the way he should go: and when he is old, he will not depart from it.",
+        "ref": "Proverbs 22:6"
+      },
+      {
+        "text": "Suffer the little children to come unto me, and forbid them not: for of such is the kingdom of God.",
+        "ref": "Mark 10:14"
+      }
+    ],
+    "heart": [
+      {
+        "title": "Patience",
+        "text": "Children learn at different speeds, and we teach with gentleness."
+      },
+      {
+        "title": "Creativity",
+        "text": "Stories, songs and games help the Word come alive for young minds."
+      },
+      {
+        "title": "Safety",
+        "text": "Every child is looked after in a safe and loving place."
+      }
+    ]
+  },
+  "hospitality": {
+    "intro": [
+      "The Hospitality unit makes sure that visitors and members feel welcome and looked after. We receive guests, serve refreshments and care for special visitors and guest ministers.",
+      "Hospitality is love in action. We open our hands and hearts so that everyone who comes here feels at home."
+    ],
+    "does": [
+      "Welcome and look after visitors and guest ministers",
+      "Prepare and serve refreshments",
+      "Help new people meet the church family",
+      "Support church events and gatherings"
+    ],
+    "scriptures": [
+      {
+        "text": "Use hospitality one to another without grudging.",
+        "ref": "1 Peter 4:9"
+      },
+      {
+        "text": "Distributing to the necessity of saints; given to hospitality.",
+        "ref": "Romans 12:13"
+      }
+    ],
+    "heart": [
+      {
+        "title": "Warmth",
+        "text": "A genuine smile and a kind word make visitors feel at home."
+      },
+      {
+        "title": "Generosity",
+        "text": "We give our time and our best to serve guests and members."
+      },
+      {
+        "title": "Attention",
+        "text": "We notice who is new, who is alone and who needs care."
+      }
+    ]
+  }
+}

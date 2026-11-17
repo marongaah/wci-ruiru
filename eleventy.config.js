@@ -45,6 +45,11 @@ module.exports = function (eleventyConfig) {
   // Takes the first N items of a list (used for "latest 3" on the home page)
   eleventyConfig.addFilter("head", (array, n) => array.slice(0, n));
 
+    // Other units: everything except the current page, first N of them
+  eleventyConfig.addFilter("otherUnits", (units, currentUrl, n) =>
+    units.filter((u) => u.url !== currentUrl).slice(0, n)
+  );
+
   // A "resources" collection, newest first
   eleventyConfig.addCollection("resourcesNewestFirst", (collectionApi) =>
     collectionApi.getFilteredByTag("resources").reverse()

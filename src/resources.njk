@@ -3,25 +3,77 @@ layout: base.njk
 title: Resources
 css: resources.css
 ---
-<section class="container">
-  <h1>Resources</h1>
-  <p>Weekly prayers and teachings.</p>
+{# ===== Page header ===== #}
+<section class="res-hero">
+  <div class="container res-hero__inner">
+    <h1 class="res-hero__title">Resources</h1>
+    <p class="res-hero__lead">Weekly prayers and teachings to help you grow in the Word, wherever you are.</p>
+    <blockquote class="res-verse">
+      <p>Study to shew thyself approved unto God, a workman that needeth not to be ashamed, rightly dividing the word of truth.</p>
+      <cite>2 Timothy 2:15</cite>
+    </blockquote>
+  </div>
+</section>
 
-  <div class="filters">
-    <button class="filter is-active" data-filter="all">All</button>
-    <button class="filter" data-filter="teaching">Teachings</button>
-    <button class="filter" data-filter="prayer">Prayers</button>
+{# ===== Online prayers ===== #}
+{% if onlinePrayers.show %}
+<section class="container res-online-wrap">
+  <div class="res-online">
+    <div class="res-online__text">
+      <p class="res-online__tag">Pray with us</p>
+      <h2 class="res-online__title">{{ onlinePrayers.title }}</h2>
+      <p class="res-online__intro">{{ onlinePrayers.intro }}</p>
+      <blockquote class="res-online__verse">
+        <p>Again I say unto you, That if two of you shall agree on earth as touching any thing that they shall ask, it shall be done for them of my Father which is in heaven.</p>
+        <cite>Matthew 18:19</cite>
+      </blockquote>
+    </div>
+
+    <div class="res-online__card">
+      <ul class="res-online__facts">
+        <li><span>When</span>{{ onlinePrayers.when }}</li>
+        <li><span>Where</span>{{ onlinePrayers.where }}</li>
+        <li><span>Led by</span>{{ onlinePrayers.leader }}</li>
+      </ul>
+      {% if onlinePrayers.whatsapp %}
+        <a class="btn btn--gold" href="https://wa.me/{{ onlinePrayers.whatsapp }}?text={{ onlinePrayers.message | urlencode }}" target="_blank" rel="noopener">Join the online prayers</a>
+        <p class="res-online__note">This opens WhatsApp so you can message the prayer leader, who will add you to the group.</p>
+      {% else %}
+        <a class="btn btn--gold" href="{{ '/contact/' | url }}">Ask about online prayers</a>
+        <p class="res-online__note">The prayer leader's WhatsApp link will be added soon.</p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{# ===== Latest teachings and prayers ===== #}
+<section class="container res-list-wrap">
+  <div class="res-head">
+    <h2 class="res-head__title">Teachings and prayers</h2>
+    <div class="filters">
+      <button class="filter is-active" data-filter="all">All</button>
+      <button class="filter" data-filter="teaching">Teachings</button>
+      <button class="filter" data-filter="prayer">Prayers</button>
+    </div>
   </div>
 
   <div class="resource-list">
     {% for post in collections.resourcesNewestFirst %}
       <article class="resource-card" data-type="{{ post.data.type }}">
-        <p class="resource-card__meta">{{ post.data.type | capitalize }} &middot; {{ post.date | readableDate }}</p>
-        <h2><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
-        {% if post.data.summary %}<p>{{ post.data.summary }}</p>{% endif %}
+        <div class="resource-card__top">
+          <span class="res-tag res-tag--{{ post.data.type }}">{{ post.data.type | capitalize }}</span>
+          {% if loop.first %}<span class="res-new">Latest</span>{% endif %}
+        </div>
+        <h3 class="resource-card__title"><a href="{{ post.url | url }}">{{ post.data.title }}</a></h3>
+        {% if post.data.summary %}<p class="resource-card__summary">{{ post.data.summary }}</p>{% endif %}
+        <div class="resource-card__foot">
+          <span class="resource-card__meta">{{ post.date | readableDate }}</span>
+          <a class="resource-card__read" href="{{ post.url | url }}">{% if post.data.audio %}Listen{% else %}Read{% endif %} &rarr;</a>
+        </div>
       </article>
     {% else %}
-      <p>No resources yet. Check back soon.</p>
+      <p class="res-empty">New teachings and prayers will appear here soon. Check back this week.</p>
     {% endfor %}
   </div>
 </section>

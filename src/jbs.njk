@@ -3,6 +3,7 @@ layout: base.njk
 title: JBS
 css: jbs.css
 description: Junior Bible School (JBS) at Winners Chapel International Ruiru. Learn about the school and see our recent graduates.
+whatsapp: 254791499912
 ---
 
 {# ===== Header band ===== #}
@@ -38,7 +39,12 @@ description: Junior Bible School (JBS) at Winners Chapel International Ruiru. Le
       <li><span class="facts__label">Classes:</span> Children, Pre-teens & Teens</li>
       <li><span class="facts__label">Venue:</span> {{ site.name }}</li>
     </ul>
-    <a class="btn btn--gold facts__btn" href="{{ '/contact/' | url }}">Ask about JBS</a>
+    {% if whatsapp %}
+      {% set jbsMsg = "Hello, I would like to register my child for Junior Bible School (JBS)." %}
+      <a class="btn btn--gold facts__btn" href="https://wa.me/{{ whatsapp }}?text={{ jbsMsg | urlencode }}" target="_blank" rel="noopener">Register</a>
+    {% else %}
+      <a class="btn btn--gold facts__btn" href="{{ '/contact/' | url }}">Register</a>
+    {% endif %}
   </aside>
 </section>
 

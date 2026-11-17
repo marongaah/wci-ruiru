@@ -3,6 +3,7 @@ layout: base.njk
 title: WOFBI
 css: wofbi.css
 description: Word of Faith Bible Institute (WOFBI) at Winners Chapel International Ruiru. Certificate and diploma courses for believers from every walk of life.
+whatsapp: 254720746132
 ---
 
 {# ===== Header band ===== #}
@@ -51,16 +52,32 @@ description: Word of Faith Bible Institute (WOFBI) at Winners Chapel Internation
       <p>Choose the program that fits where you are, then contact us to enrol.</p>
     </div>
 
-    <div class="course-grid">
+     <div class="course-grid">
       {% for c in wofbi %}
         <article class="course">
-          <div class="course__icon" aria-hidden="true">{{ c.icon }}</div>
-          <p class="course__level">{{ c.level }} ({{ c.code }})</p>
+          <p class="course__pill">{{ c.label }}</p>
+
+          <div class="course__art" aria-hidden="true">
+            {% if loop.index == 1 %}
+              <svg viewBox="0 0 120 90" width="150" height="112"><path d="M60 24c-10-8-28-9-42-4v46c14-5 32-4 42 4 10-8 28-9 42-4V20c-14-5-32-4-42 4z" fill="#fde9e7" stroke="#b71c1c" stroke-width="3" stroke-linejoin="round"/><path d="M60 24v46" stroke="#b71c1c" stroke-width="3"/><path d="M28 34c8-2 17-1 24 2M28 46c8-2 17-1 24 2M68 36c7-3 16-4 24-2M68 48c7-3 16-4 24-2" stroke="#d4af37" stroke-width="3" stroke-linecap="round" fill="none"/></svg>
+            {% elif loop.index == 2 %}
+              <svg viewBox="0 0 120 90" width="150" height="112"><path d="M60 18 12 38l48 20 48-20z" fill="#fde9e7" stroke="#b71c1c" stroke-width="3" stroke-linejoin="round"/><path d="M32 50v14c10 9 46 9 56 0V50" fill="none" stroke="#b71c1c" stroke-width="3" stroke-linejoin="round"/><path d="M108 38v22" stroke="#d4af37" stroke-width="3" stroke-linecap="round"/><circle cx="108" cy="64" r="4" fill="#d4af37"/></svg>
+            {% else %}
+              <svg viewBox="0 0 120 90" width="150" height="112"><rect x="16" y="14" width="88" height="56" rx="6" fill="#fde9e7" stroke="#b71c1c" stroke-width="3"/><path d="M30 30h44M30 42h30" stroke="#d4af37" stroke-width="3" stroke-linecap="round"/><circle cx="82" cy="52" r="11" fill="#d4af37" stroke="#b71c1c" stroke-width="3"/><path d="M76 61l-4 18 10-6 10 6-4-18" fill="#b71c1c"/></svg>
+            {% endif %}
+          </div>
+
           <h3 class="course__title">{{ c.title }}</h3>
           <p class="course__count">{{ c.count }}</p>
           <p class="course__text">{{ c.text }}</p>
-          <div class="course__action">
-            <a class="btn btn--primary" href="{{ '/contact/' | url }}">Ask about this course</a>
+                    <div class="course__action">
+            {% set wa = whatsapp or site.whatsapp %}
+            {% if wa %}
+              {% set regMsg = "Hello, I want to register for the " + c.title + "." %}
+              <a class="btn course__btn" href="https://wa.me/{{ wa }}?text={{ regMsg | urlencode }}" target="_blank" rel="noopener">Register</a>
+            {% else %}
+              <a class="btn course__btn" href="{{ '/contact/' | url }}">Register</a>
+            {% endif %}
           </div>
         </article>
       {% endfor %}

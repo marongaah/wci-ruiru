@@ -1,26 +1,20 @@
 [
   {
-    "icon": "📘",
-    "level": "Certificate",
-    "code": "BCC",
+    "label": "Beginner course",
     "title": "Basic Certificate Course",
     "count": "12 courses",
-    "text": "A certificate program made up of twelve courses. Ask us about start dates, requirements and fees."
+    "text": "Lay a solid foundation in the Word of God and grow in your understanding of the faith."
   },
   {
-    "icon": "🎓",
-    "level": "Certificate",
-    "code": "LCC",
+    "label": "Intermediate course",
     "title": "Leadership Certificate Course",
     "count": "12 courses",
-    "text": "A leadership-focused certificate program made up of twelve courses. Ask us about start dates, requirements and fees."
+    "text": "Deepen your biblical knowledge with theological concepts and learn how to apply them."
   },
   {
-    "icon": "🏅",
-    "level": "Diploma",
-    "code": "LDC",
+    "label": "Advanced course",
     "title": "Leadership Diploma Course",
     "count": "12 courses",
-    "text": "A leadership-focused diploma program made up of twelve courses. Ask us about start dates, requirements and fees."
+    "text": "Go further in the Word and in leadership, and be equipped for effective ministry."
   }
 ]
