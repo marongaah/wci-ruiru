@@ -8,6 +8,7 @@
           <a href="{{ item.url | url }}"{% if (item.url == "/" and page.url == "/") or (item.url != "/" and page.url.startsWith(item.url)) %} aria-current="page"{% endif %}>{{ item.label }}</a>
         </li>
       {% endfor %}
+      <li class="navbar__menu-cta"><a class="btn btn--gold" href="{{ '/#service-times' | url }}">Plan your visit</a></li>
     </ul>
   </nav>
 

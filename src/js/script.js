@@ -6,10 +6,14 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 const toggle = document.querySelector(".navbar__toggle");
 const links = document.querySelector(".navbar__links");
 if (toggle && links) {
-  toggle.addEventListener("click", () => {
-    const open = links.classList.toggle("is-open");
+  const setOpen = (open) => {
+    links.classList.toggle("is-open", open);
     toggle.setAttribute("aria-expanded", open);
-  });
+    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    toggle.innerHTML = open ? "&times;" : "&#9776;";   // X when open, bars when closed
+  };
+  toggle.addEventListener("click", () => setOpen(!links.classList.contains("is-open")));
+  links.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setOpen(false)));
 }
 
 // ===== Resources page: filter by Prayers / Teachings =====
