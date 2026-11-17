@@ -29,6 +29,19 @@ module.exports = function (eleventyConfig) {
     }
   });
 
+    // YAF gallery: every picture placed in src/Assets/images/yaf/ shows up automatically
+  eleventyConfig.addGlobalData("yafGallery", () => {
+    try {
+      return fs
+        .readdirSync("src/Assets/images/yaf")
+        .filter((f) => /\.(jpe?g|png|webp|avif|gif|svg)$/i.test(f))
+        .sort()
+        .map((file) => ({ file }));
+    } catch (err) {
+      return [];
+    }
+  });
+
   // Takes the first N items of a list (used for "latest 3" on the home page)
   eleventyConfig.addFilter("head", (array, n) => array.slice(0, n));
 
