@@ -124,7 +124,7 @@ css: index.css
       <cite>1 Peter 4:10</cite>
     </blockquote>
     <div class="units">
-      {% for unit in collections.serviceUnitsOrdered %}
+      {% for unit in collections.serviceUnitsOrdered | head(6) %}
         <a class="unit" href="{{ unit.url | url }}">
           <img src="{{ unit.data.image | url }}" alt="">
           <div class="unit__body">

@@ -850,14 +850,22 @@
 #units .units::-webkit-scrollbar-track { background: #e9e9ec; border-radius: 999px; }
 #units .units::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: 999px; }
 
-/* Phone: cards run to the screen edges, scrollbar hidden */
+/* ===== Homepage service units: swipe sideways on phones ===== */
 @media (max-width: 700px) {
   #units .units {
-    margin-inline: -1rem;
-    padding-inline: 1rem;
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;     /* each card settles neatly in place */
+    -webkit-overflow-scrolling: touch;
+    margin-inline: -1rem;              /* cards run to the screen edges */
+    padding: 0.25rem 1rem 1.25rem;
     scroll-padding-inline: 1rem;
-    scrollbar-width: none;
+    scrollbar-width: none;             /* hide the scrollbar */
   }
   #units .units::-webkit-scrollbar { display: none; }
-  #units .unit { flex-basis: 78%; }  /* 78% wide on phones */
+  #units .unit {
+    flex: 0 0 78%;                     /* each card is 78% wide, so the next one peeks in */
+    scroll-snap-align: start;
+  }
 }
