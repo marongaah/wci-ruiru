@@ -69,7 +69,7 @@ css: resources.css
         {% if post.data.summary %}<p class="resource-card__summary">{{ post.data.summary }}</p>{% endif %}
         <div class="resource-card__foot">
           <span class="resource-card__meta">{{ post.date | readableDate }}</span>
-          <a class="resource-card__read" href="{{ post.url | url }}">{% if post.data.audio %}Listen{% else %}Read{% endif %} &rarr;</a>
+          <a class="resource-card__read" href="{{ post.url | url }}">{% if post.data.audio %}Listen{% elif post.data.file %}Download{% else %}Read{% endif %} &rarr;</a>
         </div>
       </article>
     {% else %}

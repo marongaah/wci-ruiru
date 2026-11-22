@@ -1,5 +1,5 @@
 <header class="navbar">
-  <a class="navbar__brand" href="{{ '/' | url }}">{{ site.shortName }}</a>
+  <a class="navbar__brand" href="{{ '/' | url }}"><img src="{{ '/Assets/images/wci-logo-horizontal-for-red-header.png' | url }}" alt="{{ site.name }}" height="48"></a>
 
   <nav class="navbar__links" aria-label="Main">
     <ul>
@@ -8,7 +8,7 @@
           <a href="{{ item.url | url }}"{% if (item.url == "/" and page.url == "/") or (item.url != "/" and page.url.startsWith(item.url)) %} aria-current="page"{% endif %}>{{ item.label }}</a>
         </li>
       {% endfor %}
-      <li class="navbar__menu-cta"><a class="btn btn--gold" href="{{ '/#service-times' | url }}">Contact us</a></li>
+      <li class="navbar__menu-cta"><a class="btn btn--gold" href="{{ '/contact/' | url }}">Contact us</a></li>
     </ul>
   </nav>
 

@@ -12,9 +12,17 @@ css: resources.css
     <audio controls src="{{ audio | url }}"></audio>
   {% endif %}
 
+  {% if file %}
+    <p class="post__download"><a class="btn btn--primary" href="{{ file | url }}" download>Download the full outline</a></p>
+  {% endif %}
+
   <div class="post__body">
     {{ content | safe }}
   </div>
+
+  {% if file %}
+    <p class="post__download"><a class="btn btn--primary" href="{{ file | url }}" download>Download the full outline</a></p>
+  {% endif %}
 
   <p><a href="{{ '/resources/' | url }}">&larr; Back to Resources</a></p>
 </article>

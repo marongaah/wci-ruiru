@@ -97,3 +97,5 @@
 @media (max-width: 800px) {
   .res-online { grid-template-columns: 1fr; padding: 1.5rem; gap: 1.5rem; }
 }
+
+.post__download { margin: 1rem 0; }
