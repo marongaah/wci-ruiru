@@ -1,0 +1,93 @@
+---
+layout: base.njk
+title: WSF
+css: wsf.css
+description: Winner's Satellite Fellowship (WSF) at Winners Chapel International Ruiru. Home cells that meet every Saturday from 5:00 PM. Find a home cell near you and join.
+---
+
+{# ===== Header band ===== #}
+<section class="wsf-hero">
+  <div class="container wsf-hero__inner">
+    <p class="wsf-pill">WSF</p>
+    <h1 class="wsf-hero__title">Winner's Satellite Fellowship</h1>
+    <p class="wsf-hero__lead">Every true winner must belong to a particular home cell.</p>
+    <ul class="wsf-hero__facts">
+      <li><strong>When:</strong> Every Saturday, 5:00 PM</li>
+      <li><strong>Where:</strong> A dedicated house in your area</li>
+    </ul>
+    <blockquote class="wsf-verse">
+      <p>And they, continuing daily with one accord in the temple, and breaking bread from house to house, did eat their meat with gladness and singleness of heart, praising God, and having favour with all the people.</p>
+      <cite>Acts 2:46-47</cite>
+    </blockquote>
+  </div>
+</section>
+
+{# ===== About ===== #}
+<section class="container wsf-about">
+  <h2 class="wsf-heading">Church in a home near you</h2>
+  <p>The Winner's Satellite Fellowship is the church family gathering in homes. Each home cell meets in a dedicated house in a dedicated area, every Saturday from 5:00 PM, to pray, learn the Word and look after one another.</p>
+  <p>Find the home cell closest to you below, then tap <strong>Join</strong> to message its leader on WhatsApp. The leader will tell you exactly where to come and will add you to the group.</p>
+</section>
+
+{# ===== Find a home cell ===== #}
+<section class="wsf-find" id="find">
+  <div class="container">
+    <h2 class="wsf-heading">Find your home cell</h2>
+
+    <form class="wsf-search" role="search" id="cell-form">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="cell-search" type="search" placeholder="Search home cell or area" aria-label="Search home cells by name or area" autocomplete="off">
+      <button class="btn btn--primary" type="submit">Search</button>
+    </form>
+
+    <div class="wsf-areas" id="cell-areas" aria-label="Browse by area"></div>
+    <p class="wsf-count" id="cell-count" aria-live="polite"></p>
+
+    <div class="cells">
+      {% for c in homecells %}
+        {% set hay = (c.name + " " + (c.locations | join(" "))) | lower %}
+        <article class="cell" data-search="{{ hay }}">
+          <p class="cell__label">Home cell</p>
+          <h3 class="cell__name">{{ c.name }}</h3>
+
+          <ul class="cell__locs">
+            {% for loc in c.locations %}
+              <li class="cell__loc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>{{ loc }}</li>
+            {% endfor %}
+          </ul>
+
+          <p class="cell__meta"><span>Led by</span> {{ c.leader }}</p>
+          <p class="cell__meta"><span>Meets</span> Saturdays, 5:00 PM</p>
+
+          <div class="cell__action">
+            {% if c.whatsapp %}
+              {% set msg = "Hello, I would like to join the " + c.name + " home cell (WSF)." %}
+              <a class="btn btn--wa" href="https://wa.me/{{ c.whatsapp }}?text={{ msg | urlencode }}" target="_blank" rel="noopener">Join {{ c.name }}</a>
+            {% else %}
+              <a class="btn btn--wa" href="{{ '/contact/' | url }}">Join {{ c.name }}</a>
+            {% endif %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+
+    <div class="wsf-empty" id="cell-empty" hidden>
+      <h3>No home cell found</h3>
+      <p>We could not find a home cell for that search. Try another spelling or a nearby area, or contact us and we will connect you with a home cell.</p>
+      <a class="btn btn--primary" href="{{ '/contact/' | url }}">Contact us</a>
+    </div>
+  </div>
+</section>
+
+{# ===== Closing verse and call to action ===== #}
+<section class="wsf-cta">
+  <div class="container">
+    <blockquote class="wsf-verse wsf-verse--center">
+      <p>And the ark of the Lord continued in the house of Obededom the Gittite three months: and the Lord blessed Obededom, and all his household.</p>
+      <cite>2 Samuel 6:11</cite>
+    </blockquote>
+    <h2 class="wsf-cta__title">Do not see your area?</h2>
+    <p>Tell us where you live and we will help you find a home cell, or help you start one.</p>
+    <a class="btn btn--gold" href="{{ '/contact/' | url }}">Contact us</a>
+  </div>
+</section>

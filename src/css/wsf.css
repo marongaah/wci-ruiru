@@ -1,0 +1,119 @@
+/* ===== WSF page ===== */
+
+/* ---- Hero ---- */
+.wsf-hero {
+  color: #fff;
+  background:
+    radial-gradient(circle at 88% 15%, rgba(212, 175, 55, 0.32), transparent 45%),
+    linear-gradient(135deg, #2a0508 0%, var(--color-deep) 50%, var(--color-primary) 100%);
+}
+.wsf-hero__inner { padding-top: 3.5rem; padding-bottom: 3.75rem; }
+.wsf-pill {
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  margin-bottom: 1.1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--color-accent);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+}
+.wsf-hero__title { font-family: var(--font-display); font-weight: 700; font-size: clamp(2.1rem, 6vw, 3.6rem); line-height: 1.08; letter-spacing: -0.02em; max-width: 18ch; }
+.wsf-hero__lead { margin-top: 1rem; max-width: 34rem; font-size: clamp(1.05rem, 2vw, 1.3rem); color: rgba(255, 255, 255, 0.93); }
+.wsf-hero__facts { list-style: none; display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
+.wsf-hero__facts li { padding: 0.5rem 1.1rem; border-radius: 999px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.25); }
+.wsf-hero__facts strong { color: var(--color-accent); }
+
+.wsf-verse { margin-top: 1.6rem; padding-left: 1rem; border-left: 3px solid var(--color-accent); max-width: 40rem; }
+.wsf-verse p { font-family: var(--font-display); font-style: italic; font-size: 1.02rem; line-height: 1.55; }
+.wsf-verse cite { display: block; margin-top: 0.4rem; font-style: normal; font-weight: 600; font-size: 0.9rem; color: var(--color-accent); }
+.wsf-verse--center { margin-left: auto; margin-right: auto; border-left: 0; padding-left: 0; text-align: center; }
+.wsf-verse--center::before { content: ""; display: block; width: 3rem; height: 3px; background: var(--color-accent); margin: 0 auto 1rem; }
+
+/* ---- Shared headings ---- */
+.wsf-heading { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.6rem, 4vw, 2.3rem); line-height: 1.15; margin-bottom: 0.9rem; }
+
+/* ---- About ---- */
+.wsf-about { padding-top: 3.25rem; padding-bottom: 2.25rem; }
+.wsf-about p { max-width: 44rem; font-size: 1.08rem; line-height: 1.8; color: #333; }
+.wsf-about p + p { margin-top: 0.9rem; }
+
+/* ---- Search and cards ---- */
+.wsf-find { background: var(--color-muted); padding: 3.25rem 0 4rem; }
+.wsf-search {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 44rem;
+  margin: 1.25rem 0 1rem;
+  padding: 0.5rem 0.5rem 0.5rem 1.1rem;
+  background: #fff;
+  border: 1px solid #e0dbd1;
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+.wsf-search svg { flex: none; color: #777; }
+.wsf-search input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font: inherit; font-size: 1rem; padding: 0.5rem 0; }
+.wsf-search:focus-within { border-color: var(--color-primary); box-shadow: 0 8px 24px rgba(183, 28, 28, 0.15); }
+.wsf-search .btn { border: 0; cursor: pointer; font: inherit; font-weight: 600; padding: 0.75rem 1.6rem; }
+
+.wsf-areas { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.wsf-area {
+  padding: 0.35rem 0.95rem;
+  border: 1px solid var(--color-primary);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--color-primary);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.wsf-area:hover { background: #fbeaea; }
+.wsf-area.is-active,
+.wsf-area.is-active:hover { background: var(--color-primary); color: #fff; }
+.wsf-count { min-height: 1.5rem; margin-bottom: 0.75rem; color: #555; font-weight: 600; }
+
+.cells { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; }
+.cell {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #e6e1d8;
+  border-top: 4px solid var(--color-accent);
+  border-radius: 20px;
+  padding: 1.5rem 1.4rem 1.4rem;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.cell[hidden] { display: none; }              /* lets the search hide cards */
+.cell:hover { transform: translateY(-5px); border-color: #1a1a1a; box-shadow: 0 14px 32px rgba(0, 0, 0, 0.1); }
+.cell__label { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: #777; margin-bottom: 0.35rem; }
+.cell__name { font-family: var(--font-display); font-size: 1.45rem; font-weight: 700; line-height: 1.2; color: var(--color-primary); }
+.cell__locs { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.9rem 0 1rem; }
+.cell__loc { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.3rem 0.8rem; border-radius: 999px; background: #f8efd2; color: #5f4a06; font-size: 0.88rem; font-weight: 600; }
+.cell__meta { color: #333; line-height: 1.6; }
+.cell__meta span { display: inline-block; min-width: 4.2rem; color: #777; font-size: 0.9rem; }
+.cell__action { margin-top: auto; padding-top: 1.25rem; }
+.btn--wa { display: block; text-align: center; background: #128c4a; color: #fff; }
+.btn--wa:hover { background: #0e7a3f; }
+
+.wsf-empty { margin-top: 1rem; padding: 2.25rem 1.5rem; text-align: center; background: #fff; border: 1px dashed #d8cbb3; border-radius: 20px; }
+.wsf-empty[hidden] { display: none; }
+.wsf-empty h3 { font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 0.5rem; }
+.wsf-empty p { max-width: 32rem; margin: 0 auto 1.25rem; color: #555; }
+
+/* ---- Closing band ---- */
+.wsf-cta { background: linear-gradient(135deg, var(--color-deep) 0%, var(--color-primary) 100%); color: #fff; text-align: center; }
+.wsf-cta .container { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+.wsf-cta__title { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.5rem, 4vw, 2rem); }
+.wsf-cta p { margin: 0.5rem auto 1.5rem; max-width: 34rem; color: rgba(255, 255, 255, 0.92); }
+.wsf-cta .wsf-verse { margin-bottom: 2rem; }
+
+@media (max-width: 600px) {
+  .wsf-search { padding-left: 0.9rem; }
+  .wsf-search .btn { padding: 0.7rem 1.1rem; }
+  .cells { grid-template-columns: 1fr; }
+}

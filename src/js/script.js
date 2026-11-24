@@ -144,3 +144,44 @@ if (countdown) {
     const interval = setInterval(() => { if (!tick()) clearInterval(interval); }, 1000);
   }
 }
+// ===== WSF page: search home cells by name or area =====
+const cellForm = document.getElementById("cell-form");
+if (cellForm) {
+  const cellInput = document.getElementById("cell-search");
+  const cells = [...document.querySelectorAll(".cell")];
+  const cellCount = document.getElementById("cell-count");
+  const cellEmpty = document.getElementById("cell-empty");
+  const areaBox = document.getElementById("cell-areas");
+  const clean = (s) => s.toLowerCase().replace(/[’']/g, "").replace(/\s+/g, " ").trim();
+
+  // Area buttons, built from the locations printed on the cards
+  const areas = [...new Set([...document.querySelectorAll(".cell__loc")].map((el) => el.textContent.trim()))];
+  areas.forEach((area) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "wsf-area";
+    b.textContent = area;
+    b.addEventListener("click", () => {
+      cellInput.value = cellInput.value === area ? "" : area;
+      filterCells();
+    });
+    areaBox.appendChild(b);
+  });
+
+  function filterCells() {
+    const words = clean(cellInput.value).split(" ").filter(Boolean);   // every word must match
+    let shown = 0;
+    cells.forEach((card) => {
+      const hit = words.every((w) => card.dataset.search.includes(w));
+      card.hidden = !hit;
+      if (hit) shown++;
+    });
+    cellEmpty.hidden = shown !== 0;
+    cellCount.textContent = words.length ? shown + (shown === 1 ? " home cell found" : " home cells found") : "";
+    areaBox.querySelectorAll(".wsf-area").forEach((b) => b.classList.toggle("is-active", clean(b.textContent) === clean(cellInput.value)));
+  }
+
+  cellInput.addEventListener("input", filterCells);
+  cellForm.addEventListener("submit", (e) => { e.preventDefault(); filterCells(); });
+  filterCells();
+}

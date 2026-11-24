@@ -15,6 +15,7 @@
     { "label": "YAF", "url": "/yaf/" },
     { "label": "JBS", "url": "/jbs/" },
     { "label": "WOFBI", "url": "/wofbi/" },
+    { "label": "WSF", "url": "/wsf/" },
     { "label": "Resources", "url": "/resources/" },
     { "label": "Contact", "url": "/contact/" }
   ]

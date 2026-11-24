@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Goshen",
+    "locations": ["K. Road"],
+    "leader": "Pst. Harisson",
+    "whatsapp": "254721482542"
+  },
+  {
+    "name": "Bethel",
+    "locations": ["One Four", "GW. Kairo", "Church"],
+    "leader": "Pst. Lew",
+    "whatsapp": "254705733091"
+  },
+  {
+    "name": "Judah Next Level",
+    "locations": ["Juja"],
+    "leader": "Pst. Maathai",
+    "whatsapp": "254721319425"
+  },
+  {
+    "name": "Progress",
+    "locations": ["Juja Murram"],
+    "leader": "Pst. Abel",
+    "whatsapp": "254729960456"
+  },
+  {
+    "name": "Judah Kamakis",
+    "locations": ["Kamakis"],
+    "leader": "Dcns. Alice",
+    "whatsapp": "254725800336"
+  },
+  {
+    "name": "Fortune",
+    "locations": ["Juja Sewage"],
+    "leader": "Pst. Victor",
+    "whatsapp": "254710991722"
+  },
+  {
+    "name": "Love",
+    "locations": ["Ruiru Ndani"],
+    "leader": "Dcn. Martin",
+    "whatsapp": ""
+  }
+]
